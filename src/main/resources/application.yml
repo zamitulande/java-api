@@ -1,0 +1,40 @@
+server:
+   port: 8085
+debug: true
+spring:
+  profiles:
+    active: prod
+---
+spring:
+    config:
+      activate:
+        on-profile: dev
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: ''
+        url: jdbc:mysql://localhost:3306/oral_java
+        username: root
+
+---
+
+spring:
+    config:
+      activate:
+        on-profile: qa
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: ''
+        url: jdbc:mysql://localhost:3306/oral_java_qa
+        username: root
+
+---
+
+spring:
+    config:
+      activate:
+        on-profile: prod
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: ''
+        url: jdbc:mysql://localhost:3306/oral_java_prod
+        username: root
