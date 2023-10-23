@@ -23,7 +23,7 @@ public interface TestimonyService {
 
     Optional<Testimony> findByDescripcionCorta(String descripcion_corta);
 
-    List<Testimony> findByTipo(EnumTestimony.Tipo tipo);
+    List<Testimony> findByTipo(EnumTestimony.Tipo tipo) throws ExceptionNotFound;
 
 
 

@@ -26,7 +26,7 @@ public class TestimonyController {
     TestimonyService testimonyService;
 
     @GetMapping("/findWithJPQL/{titulo}")
-    List<Testimony> findWithJPQL(@PathVariable String titulo) {
+    List<Testimony> findWithJPQL(@PathVariable String titulo) throws ExceptionNotFound {
         return testimonyService.findWithJPQL(titulo);
     }
 
@@ -36,7 +36,7 @@ public class TestimonyController {
     }
 
     @GetMapping("/tipo/{tipo}")
-    List<Testimony> findByTipo(@PathVariable EnumTestimony.Tipo tipo){
+    List<Testimony> findByTipo(@PathVariable EnumTestimony.Tipo tipo) throws ExceptionNotFound{
         return testimonyService.findByTipo(tipo);
     }
     

@@ -63,8 +63,12 @@ public class TestimonyServiceImplem implements TestimonyService {
     }
 
     @Override
-    public List<Testimony> findByTipo(EnumTestimony.Tipo tipo){
-        return testimonyRepository.findByTipo(tipo);
+    public List<Testimony> findByTipo(EnumTestimony.Tipo tipo) throws ExceptionNotFound{
+        List<Testimony> testimonies = testimonyRepository.findByTipo(tipo);
+        if(testimonies.isEmpty()){
+            throw new ExceptionNotFound("testimony is no avaliable");
+        }
+        return testimonies;
     }
 
     @Override
